@@ -11,7 +11,22 @@ def index():
 
 @app.route('/tournament')
 def tournament():
-    content = flask.render_template('tournament_content.html')
+    # mock participants
+    participants = [
+        {'name':'Jan Kowalski', 'country':"PL",},
+        {'name': 'Jaonna Kowalska', 'country': "PL", },
+    ]
+
+    participants_content = ""
+
+    for number,participant in enumerate(participants, 1):
+        participants_content += flask.render_template(
+            'participant_content.html',
+            number = number,
+            **participant
+        )
+
+    content = flask.render_template('tournament_content.html', participants = participants_content)
 
     return flask.render_template('page.html', content=content)
 

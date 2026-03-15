@@ -29,6 +29,14 @@ def tournament():
     content = flask.render_template('tournament_content.html', participants = participants_content)
 
     return flask.render_template('page.html', content=content)
+@app.route("/register", methods=["GET", "POST"])
+def registration():
+    if flask.request.method == "POST":
+        return flask.redirect(flask.url_for('tournament'))
+
+    content = flask.render_template('registration_content.html')
+
+    return flask.render_template('page.html', content=content)
 
 if __name__ == '__main__':
     app.run()

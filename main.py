@@ -1,14 +1,14 @@
 import flask
-
 app = flask.Flask(__name__)
-
 @app.route('/')
 def index():
     content = flask.render_template('index_content.html')
 
     return flask.render_template('page.html', content=content)
 
-
+@app.route('/style.css')
+def style():
+    return flask.send_file('static/style.css')
 @app.route('/tournament')
 def tournament():
     # mock participants
@@ -39,4 +39,4 @@ def registration():
     return flask.render_template('page.html', content=content)
 
 if __name__ == '__main__':
-    app.run()
+    app.run("0.0.0.0")

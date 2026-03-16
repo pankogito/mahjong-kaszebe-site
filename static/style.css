@@ -1,0 +1,39 @@
+
+html {
+    font-family: sans-serif;
+    color: black;
+    background: bisque;
+}
+nav {
+    background-color: black;
+    padding: 10px;
+
+}
+
+a {
+    color: gold;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+div {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    box-sizing: border-box;
+    height: 100vh;
+}
+a:hover {
+    color: darkgoldenrod;
+}
+
+@media (orientation: portrait) {
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
